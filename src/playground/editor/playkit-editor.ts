@@ -12,7 +12,7 @@ export class PlaygroundEditor extends LitElement {
   @property({ type: String }) theme = 'vs-dark';
   @property({ type: Object }) options = {};
   @property({ type: Object }) overrideServices = {};
-  @property({ type: String }) idName = 'editor';
+  @property({ type: String }) idName = 'editor'; // TODO: id or class for different editors
   @property({ type: Object }) dimensions = { width: 500, height: 400 };
   // @property({ type: Number }) line: number | undefined; // TODO
 
