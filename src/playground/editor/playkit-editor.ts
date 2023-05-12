@@ -20,7 +20,7 @@ export class PlaygroundEditor extends LitElement {
   @state() private _keepCurrentModel = false; // TODO
   @state() private _saveView = true; // TODO
 
-  @query('#editor', true) private editorElement!: HTMLElement;
+  @query('#${this.editor}', true) private editorElement!: HTMLElement;
 
   private editor!: monaco.editor.IStandaloneCodeEditor;
 
@@ -107,7 +107,7 @@ export class PlaygroundEditor extends LitElement {
     return html`
       ${until(
         this._editorInitialized
-          ? html`<div id="editor"></div>`
+          ? html`<div id="${this.editor}"></div>`
           : html`<div>Loading Editor...</div>`,
         ''
       )}
