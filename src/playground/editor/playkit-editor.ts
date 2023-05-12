@@ -10,9 +10,12 @@ export class PlaygroundEditor extends LitElement {
   @property({ type: String }) language = 'typescript';
   @property({ type: String }) path = '';
   @property({ type: String }) theme = 'vs-dark';
+  // @property({ type: Object }) options?: Partial<monaco.editor.IStandaloneEditorConstructionOptions> = {};
   @property({ type: Object }) options = {};
+  // @property({ type: Object }) overrideServices?: Partial<monaco.editor.IEditorOverrideServices> = {};
   @property({ type: Object }) overrideServices = {};
   @property({ type: String }) idName = 'editor'; // TODO: id or class for different editors
+  // @property({ type: Object }) dimensions?: monaco.editor.IDimension = { width: 500, height: 400 }; 
   @property({ type: Object }) dimensions = { width: 500, height: 400 };
   // @property({ type: Number }) line: number | undefined; // TODO
 
