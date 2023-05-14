@@ -34,7 +34,8 @@ export default {
     typescript({
       compilerOptions: {
         outDir: 'www',
-        declarationDir: 'www/types'    
+        declarationDir: 'www/types',
+        experimentalDecorators: true
       }
     })
   ]
