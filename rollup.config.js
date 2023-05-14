@@ -1,4 +1,5 @@
 import nodeResolve from "@rollup/plugin-node-resolve";
+import terser from "@rollup/plugin-terser";
 import typescript from "@rollup/plugin-typescript";
 import { execSync } from 'child_process'
 
@@ -12,11 +13,7 @@ const copyTypes = () => ({
 
 
 const copyWorkers = () => {
-  execSync('cp ./node_modules/@vandeurenglenn/editor-fields/exports/ts.worker.js www/ts.worker.js')
-  execSync('cp ./node_modules/@vandeurenglenn/editor-fields/exports/html.worker.js www/html.worker.js')
-  execSync('cp ./node_modules/@vandeurenglenn/editor-fields/exports/css.worker.js www/css.worker.js')
-  execSync('cp ./node_modules/@vandeurenglenn/editor-fields/exports/editor.worker.js www/editor.worker.js')
-  execSync('cp -r ./node_modules/@vandeurenglenn/editor-fields/exports/fonts www')
+  execSync('cp -r ./node_modules/@vandeurenglenn/editor-fields/exports/* www')
   return
 }
 export default {
@@ -26,7 +23,7 @@ export default {
     dir: 'www'
   }],
   external: [
-    './field-templates/custom-el.js'
+    './fields.js'
   ],
   plugins: [,
     copyWorkers(),
@@ -37,6 +34,7 @@ export default {
         declarationDir: 'www/types',
         experimentalDecorators: true
       }
-    })
+    }),
+    terser()
   ]
 }

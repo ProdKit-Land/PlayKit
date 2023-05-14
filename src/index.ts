@@ -1,7 +1,7 @@
 import { LitElement, html, css } from 'lit';
 
-import fields from './fields.js'
-import '@vandeurenglenn/editor-fields'
+import fields from './default-fields.js'
+
 import {EditorFields} from '@vandeurenglenn/editor-fields/fields'
 import 'custom-tabs/custom-tab.js'
 import 'custom-tabs/custom-tabs.js';
@@ -18,7 +18,7 @@ export class AppIndex extends LitElement {
     `
   ];
 
-  get editorFields() {
+  get editorFields(): EditorFields {
     // @ts-ignore
     return this.renderRoot.querySelector('editor-fields')
   }
@@ -31,6 +31,7 @@ export class AppIndex extends LitElement {
   async connectedCallback() {
     super.connectedCallback()
     await this.updateComplete
+    await import('./fields.js')
     
     console.log(this.renderRoot.innerHTML);
 
