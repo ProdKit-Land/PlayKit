@@ -18,11 +18,13 @@ export class AppIndex extends LitElement {
     `
   ];
 
-  get editorFields(): EditorFields | null {
+  get editorFields(): EditorFields {
+    // @ts-ignore
     return this.renderRoot.querySelector('editor-fields')
   }
 
-  get tabs(): HTMLElement | null {
+  get tabs(): HTMLElement {
+    // @ts-ignore
     return this.renderRoot.querySelector('custom-tabs')
   }
 
