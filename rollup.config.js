@@ -28,14 +28,14 @@ export default {
   external: [
     './field-templates/custom-el.js'
   ],
-  plugins: [
+  plugins: [,
+    copyWorkers(),
     nodeResolve(),
     typescript({
       compilerOptions: {
         outDir: 'www',
         declarationDir: 'www/types'    
       }
-    }),
-    copyWorkers()
+    })
   ]
 }
