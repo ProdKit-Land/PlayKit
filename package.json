@@ -31,8 +31,7 @@
     "lit": "^2.7.4",
     "prettier": "2.8.8",
     "rollup": "^3.21.7",
-    "tslib": "^2.5.0",
-    "typescript": "^5.0.4"
+    "tslib": "^2.5.0"
   },
   "dependencies": {
     "@vandeurenglenn/editor-fields": "^1.0.1",
