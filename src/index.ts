@@ -1,13 +1,12 @@
 import { LitElement, html, css } from 'lit';
-import { customElement, property, query} from 'lit/decorators.js'
 
 import fields from './fields.js'
 import '@vandeurenglenn/editor-fields'
 import {EditorFields} from '@vandeurenglenn/editor-fields/fields'
 import 'custom-tabs/custom-tab.js'
-import 'custom-tabs/custom-tabs.js'
+import 'custom-tabs/custom-tabs.js';
 
-@customElement('app-index')
+
 export class AppIndex extends LitElement {
   static styles = [
     css`
@@ -19,13 +18,15 @@ export class AppIndex extends LitElement {
     `
   ];
 
-  @query('editor-fields', true)
-  editorFields!: EditorFields
+  get editorFields(): EditorFields | null {
+    return this.renderRoot.querySelector('editor-fields')
+  }
 
-  @query('custom-tabs')
-  tabs!: HTMLElement
+  get tabs(): HTMLElement | null {
+    return this.renderRoot.querySelector('custom-tabs')
+  }
 
-  async connectedCallback(): void {
+  async connectedCallback() {
     super.connectedCallback()
     await this.updateComplete
     
@@ -59,3 +60,5 @@ export class AppIndex extends LitElement {
     `;
   }
 }
+
+customElements.define('app-index', AppIndex)
