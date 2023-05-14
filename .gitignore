@@ -2,3 +2,5 @@ node_modules/
 .eslintcache
 packages/*/lib/
 packages/*/tsconfig.tsbuildinfo
+www
+.rollup.cache
