@@ -18,7 +18,7 @@ export class AppIndex extends LitElement {
     `
   ];
 
-  get editorFields(): EditorFields {
+  get editorFields() {
     // @ts-ignore
     return this.renderRoot.querySelector('editor-fields')
   }
