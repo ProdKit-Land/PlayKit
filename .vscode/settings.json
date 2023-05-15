@@ -16,6 +16,6 @@
   "files.insertFinalNewline": true,
   "typescript.tsdk": "node_modules/typescript/lib",
   "git.branchRandomName.enable": true,
-	"git.branchProtection": ["main", "release/*"],
-	"git.branchProtectionPrompt": "alwaysCommitToNewBranch"
+  "git.branchProtection": ["main", "release/*"],
+  "git.branchProtectionPrompt": "alwaysCommitToNewBranch"
 }
